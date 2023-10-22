@@ -1,4 +1,10 @@
-ls
+from flask import Flask , render_template, request
+import requests 
+
+app = Flask(__name__)
+
+@app.route('/')
+def homepage():
     return render_template("index.html")
 
 @app.route("/weatherapp",methods = ['POST' , "GET"])
@@ -16,3 +22,5 @@ def get_weatherdata():
 
 if __name__ == '__main__':
     app.run(host= "0.0.0.0" , port = 5002)
+
+
